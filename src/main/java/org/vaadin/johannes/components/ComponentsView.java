@@ -8,16 +8,12 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.datetimepicker.DateTimePicker;
 import com.vaadin.flow.component.dialog.Dialog;
-import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.orderedlayout.Scroller.ScrollDirection;
-import com.vaadin.flow.router.PreserveOnRefresh;
 import com.vaadin.flow.router.Route;
 
 @Route
@@ -58,23 +54,24 @@ public class ComponentsView extends VerticalLayout {
         setSizeFull();
 
     }
-}
 
-public static class ComposeDialog extends Dialog {
+    public static class ComposeDialog extends Dialog {
 
-    private Label captionLabel;
-    private Button maxButton;
-    private Button minRestoreButton;
-    private Button closeButton;
+        private Label captionLabel;
+        private Button maxButton;
+        private Button minRestoreButton;
+        private Button closeButton;
 
-    public ComposeDialog(String caption) {
-        setResizable(true);
-        setModal(false);
-        setDraggable(true);
+        public ComposeDialog(String caption) {
+            setResizable(true);
+            setModal(false);
+            setDraggable(true);
 
-        // captionLabel = new Label(caption);
-        // HorizontalLayout toolbar = new HorizontalLayout(captionLabel, minRestoreButton, maxButton, closeButton);
-        // VerticalLayout content = new VerticalLayout();
-        // add(toolbar, content);
+            // captionLabel = new Label(caption);
+            // HorizontalLayout toolbar = new HorizontalLayout(captionLabel,
+            // minRestoreButton, maxButton, closeButton);
+            // VerticalLayout content = new VerticalLayout();
+            // add(toolbar, content);
+        }
     }
 }
