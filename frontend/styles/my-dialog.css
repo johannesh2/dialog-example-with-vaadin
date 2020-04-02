@@ -1,3 +1,9 @@
+[theme~="my-dialog"] flow-component-renderer > div {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
 /* HEADER */
 [theme~="my-dialog"] header {
   align-items: center;
@@ -32,8 +38,10 @@
 
 /* FOOTER */
 [theme~="my-dialog"] footer {
+  box-shadow: 0 -1px var(--lumo-contrast-20pct);
   display: flex;
   padding: var(--lumo-space-xs) var(--lumo-space-m);
+  z-index: 1;
 }
 
 [theme~="my-dialog"] footer vaadin-button:not(:last-child) {

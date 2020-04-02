@@ -1,3 +1,7 @@
+:host([theme~="my-dialog"]) [part="overlay"] {
+  overflow: hidden;
+}
+
 :host([theme~="my-dialog"]) [part="content"] {
   padding: 0;
 }

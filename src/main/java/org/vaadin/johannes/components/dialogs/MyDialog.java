@@ -17,8 +17,9 @@ import com.vaadin.flow.theme.lumo.Lumo;
 public class MyDialog extends Dialog {
 
 	public MyDialog() {
-		// Theming
+		// Dialog theming
 		getElement().getThemeList().add("my-dialog");
+		setWidth("600px");
 
 		// Accessibility
 		getElement().setAttribute("aria-labelledby", "dialog-title");
@@ -27,14 +28,9 @@ public class MyDialog extends Dialog {
 		H2 title = new H2("New message");
 		title.addClassName("dialog-title");
 
-		Button min = new Button(VaadinIcon.COMPRESS.create());
-		min.addThemeVariants(ButtonVariant.LUMO_CONTRAST);
-
-		Button max = new Button(VaadinIcon.EXPAND.create());
-		max.addThemeVariants(ButtonVariant.LUMO_CONTRAST);
-
-		Button close = new Button(VaadinIcon.CLOSE.create());
-		close.addThemeVariants(ButtonVariant.LUMO_CONTRAST);
+		Button min = new Button(VaadinIcon.COMPRESS_SQUARE.create());
+		Button max = new Button(VaadinIcon.EXPAND_SQUARE.create());
+		Button close = new Button(VaadinIcon.CLOSE_SMALL.create());
 
 		Header header = new Header(title, min, max, close);
 		header.getElement().getThemeList().add(Lumo.DARK);
@@ -59,5 +55,10 @@ public class MyDialog extends Dialog {
 
 		Footer footer = new Footer(send, attachFiles, discardDraft);
 		add(footer);
+
+		// Button theming
+		for (Button button : new Button[] {min, max, close, attachFiles, discardDraft}) {
+			button.addThemeVariants(ButtonVariant.LUMO_CONTRAST, ButtonVariant.LUMO_TERTIARY);
+		}
 	}
 }
