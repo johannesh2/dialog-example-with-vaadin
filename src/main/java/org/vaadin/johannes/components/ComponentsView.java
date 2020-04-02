@@ -32,10 +32,7 @@ public class ComponentsView extends VerticalLayout {
 
         add(dateTimePicker);
 
-        Dialog dialog = new Dialog();
-        dialog.setResizable(true);
-        dialog.setModal(false);
-        dialog.setDraggable(true);
+        Dialog dialog = new ComposeDialog("New message");
 
         HorizontalLayout header = new HorizontalLayout();
         Label caption = new Label("My dialog");
@@ -60,5 +57,24 @@ public class ComponentsView extends VerticalLayout {
         add(openButton);
         setSizeFull();
 
+    }
+}
+
+public static class ComposeDialog extends Dialog {
+
+    private Label captionLabel;
+    private Button maxButton;
+    private Button minRestoreButton;
+    private Button closeButton;
+
+    public ComposeDialog(String caption) {
+        setResizable(true);
+        setModal(false);
+        setDraggable(true);
+
+        // captionLabel = new Label(caption);
+        // HorizontalLayout toolbar = new HorizontalLayout(captionLabel, minRestoreButton, maxButton, closeButton);
+        // VerticalLayout content = new VerticalLayout();
+        // add(toolbar, content);
     }
 }
