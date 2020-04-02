@@ -30,6 +30,7 @@ public class MyDialog extends Dialog {
 
 		Button min = new Button(VaadinIcon.COMPRESS_SQUARE.create());
 		Button max = new Button(VaadinIcon.EXPAND_SQUARE.create());
+		max.addClickListener(event -> this.setSizeFull());
 		Button close = new Button(VaadinIcon.CLOSE_SMALL.create());
 
 		Header header = new Header(title, min, max, close);

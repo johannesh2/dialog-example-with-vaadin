@@ -24,6 +24,7 @@
 [theme~="my-dialog"] .dialog-content {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   overflow: auto;
   padding: 0 var(--lumo-space-m) var(--lumo-space-l) var(--lumo-space-m);
 }
