@@ -30,6 +30,7 @@ import org.springframework.beans.factory.annotation.Autowired;
         enableInstallPrompt = true)
 @CssImport("./styles/shared-styles.css")
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
+@CssImport(value = "./styles/dialog-overlay.css", themeFor = "vaadin-dialog-overlay")
 public class MainView extends VerticalLayout {
 
     /**

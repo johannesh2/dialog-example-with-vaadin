@@ -1,0 +1,3 @@
+:host([theme~="my-dialog"]) [part="content"] {
+  padding: 0;
+}

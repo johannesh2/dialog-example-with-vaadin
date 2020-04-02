@@ -1,0 +1,45 @@
+/* HEADER */
+[theme~="my-dialog"] header {
+  align-items: center;
+  display: flex;
+  padding: var(--lumo-space-xs) var(--lumo-space-m);
+}
+
+[theme~="my-dialog"] header .dialog-title {
+  font-size: var(--lumo-font-size-m);
+  margin: 0 auto 0 0;
+}
+
+[theme~="my-dialog"] header vaadin-button:not(:last-child) {
+  margin-right: var(--lumo-space-xs);
+}
+
+/* CONTENT */
+[theme~="my-dialog"] .dialog-content {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 0 var(--lumo-space-m) var(--lumo-space-l) var(--lumo-space-m);
+}
+
+[theme~="my-dialog"] vaadin-text-field {
+  padding: var(--lumo-space-l) 0 0 0;
+}
+
+[theme~="my-dialog"] vaadin-rich-text-editor {
+  margin-top: var(--lumo-space-l);
+}
+
+/* FOOTER */
+[theme~="my-dialog"] footer {
+  display: flex;
+  padding: var(--lumo-space-xs) var(--lumo-space-m);
+}
+
+[theme~="my-dialog"] footer vaadin-button:not(:last-child) {
+  margin-right: var(--lumo-space-xs);
+}
+
+[theme~="my-dialog"] footer vaadin-button:last-child {
+  margin-left: auto;
+}

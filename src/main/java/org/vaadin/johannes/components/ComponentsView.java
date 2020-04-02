@@ -60,7 +60,7 @@ public class ComponentsView extends VerticalLayout {
     }
 }
 
-public static class ComposeDialog extends Dialog {
+class ComposeDialog extends Dialog {
 
     private Label captionLabel;
     private Button maxButton;
