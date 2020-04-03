@@ -1,4 +1,4 @@
-package org.vaadin.johannes.components.dialogs;
+package com.example.components.dialogs;
 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
