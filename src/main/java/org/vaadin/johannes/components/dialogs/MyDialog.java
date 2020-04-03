@@ -85,31 +85,45 @@ public class MyDialog extends Dialog {
 	}
 
 	private void minimise() {
-		isDocked = !isDocked;
 		if (isDocked) {
+			initialSize();
+		} else {
+			if (isFullScreen) {
+				initialSize();
+			}
 			min.setIcon(VaadinIcon.UPLOAD_ALT.create());
 			getElement().getThemeList().add(DOCK);
 			setWidth("320px");
-		} else {
-			min.setIcon(VaadinIcon.DOWNLOAD_ALT.create());
-			getElement().getThemeList().remove(DOCK);
-			setWidth("600px");
 		}
+		isDocked = !isDocked;
+		isFullScreen = false;
 		content.setVisible(!isDocked);
 		footer.setVisible(!isDocked);
 	}
 
+	private void initialSize() {
+		min.setIcon(VaadinIcon.DOWNLOAD_ALT.create());
+		getElement().getThemeList().remove(DOCK);
+		max.setIcon(VaadinIcon.EXPAND_SQUARE.create());
+		getElement().getThemeList().remove(FULLSCREEN);
+		setHeight("auto");
+		setWidth("600px");
+	}
+
 	private void maximise() {
-		isFullScreen = !isFullScreen;
 		if (isFullScreen) {
+			initialSize();
+		} else {
+			if (isDocked) {
+				initialSize();
+			}
 			max.setIcon(VaadinIcon.COMPRESS_SQUARE.create());
 			getElement().getThemeList().add(FULLSCREEN);
 			setSizeFull();
-		} else {
-			max.setIcon(VaadinIcon.EXPAND_SQUARE.create());
-			getElement().getThemeList().remove(FULLSCREEN);
-			setHeight("auto");
-			setWidth("600px");
+			content.setVisible(true);
+			footer.setVisible(true);
 		}
+		isFullScreen = !isFullScreen;
+		isDocked = false;
 	}
 }
