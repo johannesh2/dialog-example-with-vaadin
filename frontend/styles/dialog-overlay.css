@@ -5,3 +5,16 @@
 :host([theme~="my-dialog"]) [part="content"] {
   padding: 0;
 }
+
+:host([theme~="my-dialog"][theme~="dock"]) {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+:host([theme~="my-dialog"][theme~="dock"]) [part="overlay"] {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+}

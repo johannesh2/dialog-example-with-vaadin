@@ -16,6 +16,16 @@ import com.vaadin.flow.theme.lumo.Lumo;
 @CssImport("./styles/my-dialog.css")
 public class MyDialog extends Dialog {
 
+	private boolean isDocked = false;
+	private boolean isFullScreen = false;
+
+	private Header header;
+	private Button min;
+	private Button max;
+	
+	private Div content;
+	private Footer footer;
+
 	public MyDialog() {
 		// Dialog theming
 		getElement().getThemeList().add("my-dialog");
@@ -28,12 +38,16 @@ public class MyDialog extends Dialog {
 		H2 title = new H2("New message");
 		title.addClassName("dialog-title");
 
-		Button min = new Button(VaadinIcon.COMPRESS_SQUARE.create());
-		Button max = new Button(VaadinIcon.EXPAND_SQUARE.create());
-		max.addClickListener(event -> this.setSizeFull());
-		Button close = new Button(VaadinIcon.CLOSE_SMALL.create());
+		min = new Button(VaadinIcon.DOWNLOAD_ALT.create());
+		min.addClickListener(event -> minimise());
 
-		Header header = new Header(title, min, max, close);
+		max = new Button(VaadinIcon.EXPAND_SQUARE.create());
+		max.addClickListener(event -> maximise());
+
+		Button close = new Button(VaadinIcon.CLOSE_SMALL.create());
+		close.addClickListener(event -> close());
+
+		header = new Header(title, min, max, close);
 		header.getElement().getThemeList().add(Lumo.DARK);
 		add(header);
 
@@ -43,7 +57,7 @@ public class MyDialog extends Dialog {
 		RichTextEditor message = new RichTextEditor();
 		message.setValue("\n\nJohannes Häyry, PMM\nvaadin.com - +358 44 356 4403");
 
-		Div content = new Div(recipients, subject, message);
+		content = new Div(recipients, subject, message);
 		content.addClassName("dialog-content");
 		add(content);
 
@@ -54,12 +68,40 @@ public class MyDialog extends Dialog {
 		Button attachFiles = new Button(VaadinIcon.PAPERCLIP.create());
 		Button discardDraft = new Button(VaadinIcon.TRASH.create());
 
-		Footer footer = new Footer(send, attachFiles, discardDraft);
+		footer = new Footer(send, attachFiles, discardDraft);
 		add(footer);
 
 		// Button theming
 		for (Button button : new Button[] {min, max, close, attachFiles, discardDraft}) {
 			button.addThemeVariants(ButtonVariant.LUMO_CONTRAST, ButtonVariant.LUMO_TERTIARY);
+		}
+	}
+
+	private void minimise() {
+		isDocked = !isDocked;
+		if (isDocked) {
+			min.setIcon(VaadinIcon.UPLOAD_ALT.create());
+			getElement().getThemeList().add("dock");
+			setWidth("320px");
+		} else {
+			min.setIcon(VaadinIcon.DOWNLOAD_ALT.create());
+			getElement().getThemeList().remove("dock");
+			setWidth("600px");
+		}
+		setModal(!isDocked);
+		content.setVisible(!isDocked);
+		footer.setVisible(!isDocked);
+	}
+
+	private void maximise() {
+		isFullScreen = !isFullScreen;
+		if (isFullScreen) {
+			max.setIcon(VaadinIcon.COMPRESS_SQUARE.create());
+			setSizeFull();
+		} else {
+			max.setIcon(VaadinIcon.EXPAND_SQUARE.create());
+			setHeight("auto");
+			setWidth("600px");
 		}
 	}
 }
