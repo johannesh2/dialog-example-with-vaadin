@@ -9,7 +9,7 @@ import com.vaadin.flow.component.html.Footer;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Header;
 import com.vaadin.flow.component.icon.VaadinIcon;
-import com.vaadin.flow.component.richtexteditor.RichTextEditor;
+import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.theme.lumo.Lumo;
 
@@ -61,7 +61,8 @@ public class MyDialog extends Dialog {
 		// Content
 		TextField recipients = new TextField("Recipients");
 		TextField subject = new TextField("Subject");
-		RichTextEditor message = new RichTextEditor();
+		TextArea message = new TextArea();
+		message.setMinHeight("200px");
 
 		content = new Div(recipients, subject, message);
 		content.addClassName("dialog-content");

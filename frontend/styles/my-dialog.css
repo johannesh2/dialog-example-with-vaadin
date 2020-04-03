@@ -29,12 +29,9 @@
   padding: 0 var(--lumo-space-m) var(--lumo-space-l) var(--lumo-space-m);
 }
 
-[theme~="my-dialog"] vaadin-text-field {
+[theme~="my-dialog"] vaadin-text-field,
+[theme~="my-dialog"] vaadin-text-area {
   padding: var(--lumo-space-l) 0 0 0;
-}
-
-[theme~="my-dialog"] vaadin-rich-text-editor {
-  margin-top: var(--lumo-space-l);
 }
 
 /* FOOTER */
