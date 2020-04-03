@@ -16,17 +16,24 @@ import com.vaadin.flow.theme.lumo.Lumo;
 @CssImport("./styles/my-dialog.css")
 public class MyDialog extends Dialog {
 
+	public String DOCK = "dock";
+	public String FULLSCREEN = "fullscreen";
+
 	private boolean isDocked = false;
 	private boolean isFullScreen = false;
 
 	private Header header;
 	private Button min;
 	private Button max;
-	
+
 	private Div content;
 	private Footer footer;
 
 	public MyDialog() {
+		setDraggable(true);
+		setModal(false);
+		setResizable(true);
+
 		// Dialog theming
 		getElement().getThemeList().add("my-dialog");
 		setWidth("600px");
@@ -55,7 +62,6 @@ public class MyDialog extends Dialog {
 		TextField recipients = new TextField("Recipients");
 		TextField subject = new TextField("Subject");
 		RichTextEditor message = new RichTextEditor();
-		message.setValue("\n\nJohannes Häyry, PMM\nvaadin.com - +358 44 356 4403");
 
 		content = new Div(recipients, subject, message);
 		content.addClassName("dialog-content");
@@ -81,14 +87,13 @@ public class MyDialog extends Dialog {
 		isDocked = !isDocked;
 		if (isDocked) {
 			min.setIcon(VaadinIcon.UPLOAD_ALT.create());
-			getElement().getThemeList().add("dock");
+			getElement().getThemeList().add(DOCK);
 			setWidth("320px");
 		} else {
 			min.setIcon(VaadinIcon.DOWNLOAD_ALT.create());
-			getElement().getThemeList().remove("dock");
+			getElement().getThemeList().remove(DOCK);
 			setWidth("600px");
 		}
-		setModal(!isDocked);
 		content.setVisible(!isDocked);
 		footer.setVisible(!isDocked);
 	}
@@ -97,9 +102,11 @@ public class MyDialog extends Dialog {
 		isFullScreen = !isFullScreen;
 		if (isFullScreen) {
 			max.setIcon(VaadinIcon.COMPRESS_SQUARE.create());
+			getElement().getThemeList().add(FULLSCREEN);
 			setSizeFull();
 		} else {
 			max.setIcon(VaadinIcon.EXPAND_SQUARE.create());
+			getElement().getThemeList().remove(FULLSCREEN);
 			setHeight("auto");
 			setWidth("600px");
 		}

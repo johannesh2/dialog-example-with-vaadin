@@ -15,6 +15,17 @@
 
 :host([theme~="my-dialog"][theme~="dock"]) [part="overlay"] {
   bottom: 0;
+  height: auto !important;
+  left: auto !important;
   position: absolute;
   right: 0;
+  top: auto !important;
+}
+
+:host([theme~="my-dialog"][theme~="fullscreen"]) [part="overlay"] {
+  bottom: 0;
+  left: 0 !important;
+  position: absolute;
+  right: 0;
+  top: 0 !important;
 }

@@ -52,3 +52,16 @@
 [theme~="my-dialog"] footer vaadin-button:last-child {
   margin-left: auto;
 }
+
+/* DRAGGABLE and RESIZABLE */
+[theme~="my-dialog"] header,
+[theme~="my-dialog"] .dialog-content,
+[theme~="my-dialog"] footer {
+  pointer-events: none;
+}
+
+[theme~="my-dialog"] header *,
+[theme~="my-dialog"] .dialog-content *,
+[theme~="my-dialog"] footer * {
+  pointer-events: auto;
+}
