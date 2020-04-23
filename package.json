@@ -11,7 +11,7 @@
       "@vaadin/vaadin-split-layout": "4.1.1",
       "@vaadin/vaadin-combo-box": "5.0.11",
       "@vaadin/vaadin-cookie-consent": "1.1.2",
-      "@vaadin/vaadin-core-shrinkwrap": "14.2.0-alpha10",
+      "@vaadin/vaadin-core-shrinkwrap": "14.2.0-beta1",
       "@vaadin/vaadin-upload": "4.2.2",
       "@vaadin/vaadin-dialog": "2.3.0",
       "@vaadin/vaadin-select": "2.1.7",
@@ -22,8 +22,8 @@
       "@vaadin/vaadin-charts": "6.2.4",
       "@vaadin/vaadin-grid-pro": "2.0.7",
       "@vaadin/vaadin-progress-bar": "1.1.2",
-      "@vaadin/vaadin-shrinkwrap": "14.2.0-alpha10",
-      "@vaadin/vaadin-date-time-picker": "1.0.0-alpha6",
+      "@vaadin/vaadin-shrinkwrap": "14.2.0-beta1",
+      "@vaadin/vaadin-date-time-picker": "1.0.0-beta1",
       "@vaadin/vaadin-ordered-layout": "1.2.0",
       "@vaadin/vaadin-login": "1.0.1",
       "@vaadin/vaadin-button": "2.2.2",
@@ -58,7 +58,7 @@
       "webpack-merge": "4.2.2",
       "webpack-dev-server": "3.10.3"
     },
-    "hash": "871a1a4018dacc46431581aca86d16d9a33bda849426cd9cf7ce04cb3cd924be"
+    "hash": "42bc911316fee468604f59a2bc12df1e0f3f42e17e32303e7324b3502bb2a339"
   },
   "dependencies": {
     "@polymer/polymer": "3.2.0",
@@ -69,7 +69,7 @@
     "@vaadin/vaadin-split-layout": "4.1.1",
     "@vaadin/vaadin-combo-box": "5.0.11",
     "@vaadin/vaadin-cookie-consent": "1.1.2",
-    "@vaadin/vaadin-core-shrinkwrap": "14.2.0-alpha10",
+    "@vaadin/vaadin-core-shrinkwrap": "14.2.0-beta1",
     "@vaadin/vaadin-upload": "4.2.2",
     "@vaadin/vaadin-dialog": "2.3.0",
     "@vaadin/vaadin-select": "2.1.7",
@@ -80,8 +80,8 @@
     "@vaadin/vaadin-charts": "6.2.4",
     "@vaadin/vaadin-grid-pro": "2.0.7",
     "@vaadin/vaadin-progress-bar": "1.1.2",
-    "@vaadin/vaadin-shrinkwrap": "14.2.0-alpha10",
-    "@vaadin/vaadin-date-time-picker": "1.0.0-alpha6",
+    "@vaadin/vaadin-shrinkwrap": "14.2.0-beta1",
+    "@vaadin/vaadin-date-time-picker": "1.0.0-beta1",
     "@vaadin/vaadin-ordered-layout": "1.2.0",
     "@vaadin/vaadin-login": "1.0.1",
     "@vaadin/vaadin-button": "2.2.2",
