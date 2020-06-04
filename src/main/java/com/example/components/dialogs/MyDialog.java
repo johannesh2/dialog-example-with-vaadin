@@ -4,11 +4,12 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dialog.Dialog;
-import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Footer;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Header;
 import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.theme.lumo.Lumo;
@@ -26,7 +27,7 @@ public class MyDialog extends Dialog {
 	private Button min;
 	private Button max;
 
-	private Div content;
+	private VerticalLayout content;
 	private Footer footer;
 
 	public MyDialog() {
@@ -64,8 +65,9 @@ public class MyDialog extends Dialog {
 		TextArea message = new TextArea();
 		message.setMinHeight("200px");
 
-		content = new Div(recipients, subject, message);
+		content = new VerticalLayout(recipients, subject, message);
 		content.addClassName("dialog-content");
+		content.setAlignItems(Alignment.STRETCH);
 		add(content);
 
 		// Footer
@@ -79,7 +81,7 @@ public class MyDialog extends Dialog {
 		add(footer);
 
 		// Button theming
-		for (Button button : new Button[] {min, max, close, attachFiles, discardDraft}) {
+		for (Button button : new Button[] { min, max, close, attachFiles, discardDraft }) {
 			button.addThemeVariants(ButtonVariant.LUMO_CONTRAST, ButtonVariant.LUMO_TERTIARY);
 		}
 	}

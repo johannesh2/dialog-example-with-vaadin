@@ -22,16 +22,8 @@
 
 /* CONTENT */
 [theme~="my-dialog"] .dialog-content {
-  display: flex;
-  flex-direction: column;
   flex-grow: 1;
   overflow: auto;
-  padding: 0 var(--lumo-space-m) var(--lumo-space-l) var(--lumo-space-m);
-}
-
-[theme~="my-dialog"] vaadin-text-field,
-[theme~="my-dialog"] vaadin-text-area {
-  padding: var(--lumo-space-l) 0 0 0;
 }
 
 /* FOOTER */
@@ -52,13 +44,11 @@
 
 /* DRAGGABLE and RESIZABLE */
 [theme~="my-dialog"] header,
-[theme~="my-dialog"] .dialog-content,
 [theme~="my-dialog"] footer {
   pointer-events: none;
 }
 
 [theme~="my-dialog"] header *,
-[theme~="my-dialog"] .dialog-content *,
 [theme~="my-dialog"] footer * {
   pointer-events: auto;
 }
